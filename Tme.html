@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <title>TME Education</title>
+  <style>
+  body{
+  text-align:center;}
+  
+  </style>
+</head>
+<Script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<Script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+<Script >const firebaseConfig = {
+  apiKey: "AIzaSyC6SaHD-59cH_xg4nFQlQjSKgqJxtPOfKg",
+  authDomain: "gthgfngmxhkjzhy.firebaseapp.com",
+  projectId: "gthgfngmxhkjzhy",
+  storageBucket: "gthgfngmxhkjzhy.appspot.com",
+  messagingSenderId: "818100443606",
+  appId: "1:818100443606:web:99e29c7a0f595735baac77",
+  measurementId: "G-C0VZDQ48S3"
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig)
+
+function ledOn(){
+firebase.database().ref('SALA').set({estado:'ligada'})
+}
+
+function ledOff(){
+firebase.database().ref('SALA').set({estado:'desligada'})
+}
+
+</script>
+<Script src="app.js defer"></script>
+
+<body style="background-color: Darkgray">
+ <h1>TME Education</h1>
+ <button id='btnLigar' onclick="ledOn()">Ligar</button>
+ <button id='btnDesligar' onclick="ledOff()">Desligar</button>
+</body>
+</html>
